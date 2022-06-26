@@ -6,5 +6,6 @@ class Keypad {
     private Scanner input;
 
     public Keypad() { input = new Scanner( System.in ); }
-    public int getInput() { return input.nextInt(); }
+    public int getInt() { return input.nextInt(); }
+    public String getString() { return input.next(); }
 }

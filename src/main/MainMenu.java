@@ -1,7 +1,7 @@
 package main;
 
 class MainMenu {
-    public static final int SUBJECT_REGISTRATION = 1;
+    public static final int INSERT_SUBJECT = 1;
     public static final int MOVE_TO_SIGNUP = 2;
     public static final int MOVE_TO_SEARCH = 3;
     public static final int EXIT = 4;
