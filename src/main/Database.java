@@ -45,7 +45,7 @@ public class Database {
                     userExited = true;
                     break;
                 default:
-                    screen.displayMessageLine(Message.ERR_CHOICE);//바꿔
+                    screen.displayMessageLine(Message.ERR_CHOICE);
                     break;
             }
         }
@@ -83,19 +83,16 @@ public class Database {
             int command = searchMenu.displaySearch(screen, keypad);
             switch ( command ) {
                 case SearchMenu.SHOW_SUBJECT:
-                    screen.displayMessage(transaction.showSubject());
+                    showSubject();
                     break;
                 case SearchMenu.SHOW_SIGNUP:
-                    screen.displayMessage(Message.INPUT_STUDENT_ID);
-                    transaction.showSignUp(keypad.getInt());
+                    showSignUp();
                     break;
                 case SearchMenu.SHOW_SUBJECT_ATTENDANCE:
-                    screen.displayMessage(Message.INPUT_SUBJECT_NUMBER);
-                    transaction.showSubjectAttendance(keypad.getInt());
+                    showSubjectAttendance();
                     break;
                 case SearchMenu.SHOW_SEPARATED_CLASS_ATTENDANCE:
-                    screen.displayMessage(Message.INPUT_DIVIDE_CLASS_NUMBER);
-                    transaction.showDistributionAttendance(keypad.getInt(), keypad.getInt());
+                    showSeparatedClassAttendance();
                     break;
                 case SearchMenu.BACK:
                     userExited = true;
@@ -131,8 +128,6 @@ public class Database {
             screen.displayMessageLine(Message.OPEN_FAIL);
         }
     }
-
-
 
     public void insertSignUp() {
         int stdId;
@@ -174,5 +169,30 @@ public class Database {
 
         transaction.updateSignUp(stdId, newScId, newSbjId, oldSbjId);
         screen.displayMessageLine(Message.CHANGE_SUCCESS);
+    }
+
+
+
+    public void showSubject() {
+        screen.displayMessage(transaction.showSubject());
+    }
+
+    public void showSignUp() {
+        screen.displayMessage(Message.INPUT_STUDENT_ID);
+        screen.displayMessage(transaction.showSignUp(keypad.getInt()));
+    }
+
+    public void showSubjectAttendance() {
+        screen.displayMessage(Message.INPUT_SUBJECT_NUMBER);
+        screen.displayMessage(transaction.showSubjectAttendance(keypad.getInt()));
+    }
+
+    public void showSeparatedClassAttendance() {
+        screen.displayMessage(Message.INPUT_SUBJECT_NUMBER);
+        int sbjId = keypad.getInt();
+        screen.displayMessage(Message.INPUT_DIVIDE_CLASS_NUMBER);
+        int scId = keypad.getInt();
+
+        screen.displayMessage((transaction.showDistributionAttendance(sbjId, scId)));
     }
 }

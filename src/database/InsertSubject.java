@@ -2,7 +2,6 @@ package database;
 
 import java.sql.*;
 
-
 public class InsertSubject {
     protected boolean insert(Connection con, int sbjId, String sbjName, int scId) {
         try {
@@ -11,8 +10,6 @@ public class InsertSubject {
             cstmt.setString(2, sbjName);
             cstmt.setInt(3, scId);
             cstmt.execute();
-
-            con.close();
         } catch (SQLException e) {
             e.printStackTrace();
             return false;

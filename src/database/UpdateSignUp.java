@@ -13,8 +13,6 @@ public class UpdateSignUp {
             cstmt.executeUpdate();
 
             cstmt.close();
-            con.close();
-
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
