@@ -5,7 +5,9 @@ import oracle.jdbc.internal.OracleTypes;
 import java.sql.*;
 
 public class ShowSubjectAttendance {
-    protected void show(Connection con, int sbjId) {
+    protected String show(Connection con, int sbjId) {
+        StringBuilder sb = new StringBuilder();
+
         try {
             CallableStatement cstmt = con.prepareCall("{call showSubjectAttendance(?,?)}");
             cstmt.setInt(1, sbjId);
@@ -17,14 +19,16 @@ public class ShowSubjectAttendance {
             while(rs.next()) {
                 String id = rs.getString("id");
 
-                System.out.println(id);
-                System.out.println();
+                sb.append(id);
+                sb.append("\n\n");
             }
             rs.close();
             con.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        return sb.toString();
     }
 
 }

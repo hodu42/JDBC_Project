@@ -5,7 +5,9 @@ import oracle.jdbc.OracleTypes;
 import java.sql.*;
 
 public class ShowSignUp {
-    protected void show(Connection con, int stdId) {
+    protected String show(Connection con, int stdId) {
+        StringBuilder sb = new StringBuilder();
+
         try {
             CallableStatement cstmt = con.prepareCall("{call showSignUp(?,?)}");
             cstmt.setInt(1, stdId);
@@ -19,14 +21,16 @@ public class ShowSignUp {
                 int scId = rs.getInt("scId");
                 String subjectName = rs.getString("subjectName");
 
-                System.out.println(subjectId + "-" + scId + " " + subjectName);
-                System.out.println();
+                sb.append(subjectId + "-" + scId + " " + subjectName);
+                sb.append("\n\n");
             }
             rs.close();
             con.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        return sb.toString();
     }
 
 }
