@@ -7,9 +7,6 @@ class SearchMenu {
     public static final int BACK = 4;
     public static final int EXIT = 5;
 
-
-
-
     public int displaySearch(Screen screen, Keypad keypad) {
         screen.displayMessageLine( "\n\t\t MENU:\n" );
         screen.displayMessageLine( "\t\t1 - 개설강좌 조회" );

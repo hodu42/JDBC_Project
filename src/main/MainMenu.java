@@ -6,7 +6,6 @@ class MainMenu {
     public static final int MOVE_TO_SEARCH = 3;
     public static final int EXIT = 4;
 
-
     // display main menu and get user command
     public int displayMainMenu(Screen screen, Keypad keypad) {
         screen.displayMessageLine( "\n\t\t MENU:\n" );

@@ -6,7 +6,6 @@ class SignupMenu {
     public static final int BACK = 3;
     public static final int EXIT = 4;
 
-
     public int displaySignupMenu(Screen screen, Keypad keypad) {
         screen.displayMessageLine( "\n\t\t MENU:\n" );
         screen.displayMessageLine( "\t\t1 - 수강신청" );
