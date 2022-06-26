@@ -12,8 +12,8 @@ public class ShowSubject {
         try {
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(query);
-            sb.append("Subject Id\tSubject Name\n");
 
+            sb.append("Subject Id\tSubject Name\n");
             while(rs.next()) {
                 String subjectId = rs.getString("subjectId");
                 String subjectName = rs.getString("subjectName");
