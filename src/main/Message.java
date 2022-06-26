@@ -11,4 +11,5 @@ class Message {
     public static final String INPUT_STUDENTID = "\nEnter your student ID: ";
     public static final String INPUT_SUBJECTNUMBER = "\nEnter subject number: ";
     public static final String INPUT_DIVIDECLASSNUMBER = "\nEnter divide class number: ";
+    public static final String ERR_CHOICE = "\nInvalid Choice";
 }
