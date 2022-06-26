@@ -42,7 +42,7 @@ public class Database {
                     userExited = true;
                     break;
                 default:
-                    screen.displayMessageLine(Message.ERR_CHOICE);
+                    screen.displayMessageLine(Message.CHANGE_SUCCESS);//바꿔
                     break;
             }
         }
@@ -112,8 +112,8 @@ public class Database {
         screen.displayMessage("Enter Seperated Class Name : ");
         scId = keypad.getInt();
 
-        if (!transaction.insertSubject(sbjId, sbjName, scId)) {
-            screen.displayMessageLine(Message.ERR);
+        if (transaction.insertSubject(sbjId, sbjName, scId)) {
+            screen.displayMessageLine(Message.OPEN_SUCCESS);
         }
     }
 }
