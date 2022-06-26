@@ -1,6 +1,9 @@
-package main;
+package menu;
 
-class SearchMenu {
+import io.Keypad;
+import io.Screen;
+
+public class SearchMenu {
     public static final int SHOW_SUBJECT = 1;
     public static final int SHOW_SIGNUP = 2;
     public static final int SHOW_SUBJECT_ATTENDANCE = 3;
@@ -15,6 +18,6 @@ class SearchMenu {
         screen.displayMessageLine( "\t\t4 - 이전 메뉴로" );
         screen.displayMessageLine( "\t\t5 - 종료" );
         screen.displayMessage( "\tChoice: " );
-        return keypad.getInput();
+        return keypad.getInt();
     }
 }
