@@ -14,8 +14,8 @@ public class Main {
 
     private static DAO createDAO() {
         String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-        String userId = "sys as sysdba";
-        String pwd = "Qktek0014-";
+        String userId = "c##madang";
+        String pwd = "madang";
 
         return new DAO("", url, userId, pwd);
     }

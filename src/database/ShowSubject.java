@@ -7,25 +7,22 @@ import java.sql.*;
 public class ShowSubject {
     protected String show(Connection con) {
         StringBuilder sb = new StringBuilder();
-
         try {
-            CallableStatement cstmt = con.prepareCall("{call showsubject(?)}");
+            String query = "SELECT * FROM Subject";
 
-            cstmt.registerOutParameter(1, OracleTypes.CURSOR);
-            cstmt.execute();
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            sb.append("Subject Id\tSubject Name\n");
 
-            ResultSet rs = null;
-            rs = (ResultSet)cstmt.getObject(1);
             while(rs.next()) {
                 String subjectId = rs.getString("subjectId");
                 String subjectName = rs.getString("subjectName");
 
-                sb.append(subjectId + " " + subjectName);
+                sb.append(subjectId + "\t" + subjectName);
                 sb.append("\n\n");
             }
-            rs.close();
-            con.close();
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             e.printStackTrace();
         }
 

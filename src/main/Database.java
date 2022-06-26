@@ -83,15 +83,19 @@ public class Database {
             int command = searchMenu.displaySearch(screen, keypad);
             switch ( command ) {
                 case SearchMenu.SHOW_SUBJECT:
-                    transaction.showSubject();
+                    screen.displayMessage(transaction.showSubject());
                     break;
                 case SearchMenu.SHOW_SIGNUP:
-                    screen.displayMessage("Enter Student ID : ");
+                    screen.displayMessage(Message.INPUT_STUDENT_ID);
                     transaction.showSignUp(keypad.getInt());
                     break;
                 case SearchMenu.SHOW_SUBJECT_ATTENDANCE:
-                    screen.displayMessage("Enter Subject ID : ");
+                    screen.displayMessage(Message.INPUT_SUBJECT_NUMBER);
                     transaction.showSubjectAttendance(keypad.getInt());
+                    break;
+                case SearchMenu.SHOW_SEPARATED_CLASS_ATTENDANCE:
+                    screen.displayMessage(Message.INPUT_DIVIDE_CLASS_NUMBER);
+                    transaction.showDistributionAttendance(keypad.getInt(), keypad.getInt());
                     break;
                 case SearchMenu.BACK:
                     userExited = true;

@@ -11,9 +11,9 @@ public class SignupMenu {
 
     public int displaySignupMenu(Screen screen, Keypad keypad) {
         screen.displayMessageLine( "\n\t\t MENU:\n" );
-        screen.displayMessageLine( "\t\t1 - 수강신청" );
-        screen.displayMessageLine( "\t\t2 - 수강신청 변경" );
-        screen.displayMessageLine( "\t\t3 - 이전 메뉴로" );
+        screen.displayMessageLine( "\t\t1 - SIGNUP" );
+        screen.displayMessageLine( "\t\t2 - SIGNUP CHANGE" );
+        screen.displayMessageLine( "\t\t3 - BACK" );
         screen.displayMessage( "\tChoice: " );
         return keypad.getInt();
     }
