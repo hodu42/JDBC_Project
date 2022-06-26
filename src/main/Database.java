@@ -1,9 +1,11 @@
 package main;
 
+
+
 public class Database {
     private Keypad keypad;
     private Screen screen;
-    private Menu mainMenu;
+    private MainMenu mainMenu;
 
     public void performTransactions() {
         boolean userExited = false;
