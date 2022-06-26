@@ -1,8 +1,8 @@
-package main;
+package io;
 
 import java.util.Scanner;
 
-class Keypad {
+public class Keypad {
     private Scanner input;
 
     public Keypad() { input = new Scanner( System.in ); }

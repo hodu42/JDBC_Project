@@ -1,6 +1,9 @@
-package main;
+package menu;
 
-class MainMenu {
+import io.Keypad;
+import io.Screen;
+
+public class MainMenu {
     public static final int INSERT_SUBJECT = 1;
     public static final int MOVE_TO_SIGNUP = 2;
     public static final int MOVE_TO_SEARCH = 3;
@@ -14,6 +17,6 @@ class MainMenu {
         screen.displayMessageLine( "\t\t3 - 자료 조회 메뉴로 이동" );
         screen.displayMessageLine( "\t\t4 - 종료" );
         screen.displayMessage( "\tChoice: " );
-        return keypad.getInput();
+        return keypad.getInt();
     }
 }
