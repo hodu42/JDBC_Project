@@ -4,7 +4,7 @@ import java.sql.*;
 
 
 public class InsertSubject {
-    protected void insert(Connection con, int sbjId, String sbjName, int scId) {
+    protected boolean insert(Connection con, int sbjId, String sbjName, int scId) {
         try {
             CallableStatement cstmt = con.prepareCall("{call insertSubject(?,?,?)}");
             cstmt.setInt(1, sbjId);
@@ -15,7 +15,9 @@ public class InsertSubject {
             con.close();
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
+        return true;
     }
 
 }

@@ -14,9 +14,6 @@ public class Database {
                 case Menu.BALANCE_INQUIRY:
                 case Menu.WITHDRAWAL:
                 case Menu.DEPOSIT:
-                    currentTransaction = createTransaction( command );
-                    currentTransaction.execute();
-                    currentTransaction = null;
                     break;
                 case Menu.EXIT:
                     userExited = true;

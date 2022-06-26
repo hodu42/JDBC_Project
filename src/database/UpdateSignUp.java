@@ -3,7 +3,7 @@ package database;
 import java.sql.*;
 
 public class UpdateSignUp {
-    protected void update(Connection con, int stdId, int newScId, int newSbjId, int oldSbjId) {
+    protected boolean update(Connection con, int stdId, int newScId, int newSbjId, int oldSbjId) {
         try {
             CallableStatement cstmt = con.prepareCall("{call updateSignUp(?,?,?,?)}");
             cstmt.setInt(1, stdId);
@@ -17,6 +17,8 @@ public class UpdateSignUp {
 
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
+        return true;
     }
 }

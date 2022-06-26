@@ -3,7 +3,7 @@ package database;
 import java.sql.*;
 
 public class InsertSignUp {
-    protected void insert(Connection con, int stdId, int scId, int sbjId, String grade) {
+    protected boolean insert(Connection con, int stdId, int scId, int sbjId, String grade) {
         try {
             CallableStatement cstmt = con.prepareCall("{call insertSignUp(?,?,?,?)}");
             cstmt.setInt(1, stdId);
@@ -15,6 +15,8 @@ public class InsertSignUp {
             con.close();
         } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
+        return true;
     }
 }
