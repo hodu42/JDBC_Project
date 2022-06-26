@@ -7,9 +7,9 @@ import java.sql.*;
 public class ShowSubject {
     protected String show(Connection con) {
         StringBuilder sb = new StringBuilder();
-        try {
-            String query = "SELECT * FROM Subject";
+        String query = "SELECT * FROM Subject";
 
+        try {
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             sb.append("Subject Id\tSubject Name\n");

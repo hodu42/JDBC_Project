@@ -11,8 +11,6 @@ public class InsertSignUp {
             cstmt.setInt(3, sbjId);
             cstmt.setString(4, grade);
             cstmt.execute();
-
-            con.close();
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
